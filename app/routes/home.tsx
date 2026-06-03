@@ -1,6 +1,11 @@
+import { useState } from "react";
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
-
+// import LoginPageV2 from './login' 
+import {  LoginPageV4, LoginPageV3 } from './login'
+import { BtnCounter } from "~/components/Buttons/btnCounter";
+import  {StateBtnCounter} from "~/components/Buttons/stateBtnCounter";
+import { ParseStateBtn } from "~/components/Buttons/parseStateBtn";
+import { ParseStateBtnV2 } from "~/components/Buttons/parseStateBtnV2";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "New React Router App" },
@@ -9,5 +14,42 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <Welcome />;
+
+  const [colSec,setColSec] = useState(false);
+  return(<>
+    <h1>Home Page</h1>
+      <BtnCounter count={10} name="Home Page Counter" />
+     <LoginPageV3 />
+    <LoginPageV4 />
+
+      <br />
+      <br />
+      <br />
+
+    ==================================================================
+  <br />
+  <br />
+  <br />
+
+  <StateBtnCounter />
+
+
+   ==================================================================
+  <br />
+  <br />
+  <br />
+
+   <ParseStateBtn colasasaSec={false} />
+   <ParseStateBtn colasasaSec={true} />
+
+
+ ==================================================================
+  <br />
+  <br />
+  <br />
+
+  <ParseStateBtnV2 colSec={colSec} setColSec={setColSec} />
+  <ParseStateBtnV2 colSec={colSec} setColSec={setColSec} />
+
+  </>);
 }
