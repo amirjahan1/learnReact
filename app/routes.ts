@@ -7,6 +7,8 @@ export default [
     route("/product","./routes/products/index.tsx"),
     route("/product/:id" , "./routes/products/single.tsx"),
     route("/login", "./routes/auth/login/index.tsx"),
+    route("/useEffect", "./routes/getData/useEffect.tsx"),
+    route("/posts", "./routes/getData/getPost.tsx"),
 
     layout("./components/Auth/ProtectedRoute.tsx", [
          route("/profile","./routes/profile/index.tsx"),
