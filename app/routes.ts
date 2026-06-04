@@ -9,6 +9,7 @@ export default [
     route("/login", "./routes/auth/login/index.tsx"),
     route("/useEffect", "./routes/getData/useEffect.tsx"),
     route("/posts", "./routes/getData/getPost.tsx"),
+     route("/testRef", "./routes/getDom/useRefHook.tsx"),
 
     layout("./components/Auth/ProtectedRoute.tsx", [
          route("/profile","./routes/profile/index.tsx"),
