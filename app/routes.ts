@@ -19,8 +19,16 @@ export default [
     route("/zustand/add", "./routes/zustand/AddTodo.tsx"),
 
 
-     route("/redux/list", "./routes/redux/ListTodo.tsx"),
+    route("/redux/list", "./routes/redux/ListTodo.tsx"),
     route("/redux/add", "./routes/redux/AddTodo.tsx"),
+
+
+
+
+    route("/optimize", "./routes/optimization/index.tsx"),
+
+    route("/todo", "./routes/tanstack/todo.tsx"),
+
 
     layout("./components/Auth/ProtectedRoute.tsx", [
          route("/profile","./routes/profile/index.tsx"),
