@@ -8,7 +8,9 @@ import {
 } from "react-router";
 import {TodoProvider} from "./context/TodoContext"
 import type { Route } from "./+types/root";
+import { Provider } from "react-redux"
 import "./app.css";
+import { store } from "./redux/store";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -34,7 +36,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <TodoProvider >
+          <Provider store={store}>
         {children}
+        </Provider>
         </TodoProvider>
         <ScrollRestoration />
         <Scripts />

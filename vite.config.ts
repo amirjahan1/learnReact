@@ -4,7 +4,9 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [tailwindcss(), reactRouter()],
+  server: { hmr: false },
   resolve: {
     tsconfigPaths: true,
   },
+  
 });
