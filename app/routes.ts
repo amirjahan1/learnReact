@@ -11,6 +11,9 @@ export default [
     route("/posts", "./routes/getData/getPost.tsx"),
     route("/testRef", "./routes/getDom/useRefHook.tsx"),
     route("/form", "./routes/form/formPage.tsx"),
+     route("/list", "./routes/todo/ListTodo.tsx"),
+     route("/add", "./routes/todo/AddTodo.tsx"),
+
 
     layout("./components/Auth/ProtectedRoute.tsx", [
          route("/profile","./routes/profile/index.tsx"),
