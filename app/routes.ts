@@ -27,6 +27,8 @@ export default [
 
     route("/optimize", "./routes/optimization/index.tsx"),
 
+    route("/todo", "./routes/tanstack/todo.tsx"),
+
 
     layout("./components/Auth/ProtectedRoute.tsx", [
          route("/profile","./routes/profile/index.tsx"),

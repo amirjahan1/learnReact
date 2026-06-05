@@ -11,6 +11,7 @@ import type { Route } from "./+types/root";
 import { Provider } from "react-redux"
 import "./app.css";
 import { store } from "./redux/store";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -24,8 +25,10 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
 ];
+  const queryClient = new QueryClient()
 
 export function Layout({ children }: { children: React.ReactNode }) {
+
   return (
     <html lang="en">
       <head>
@@ -35,11 +38,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <QueryClientProvider client={queryClient}>
         <TodoProvider >
           <Provider store={store}>
+            
         {children}
         </Provider>
         </TodoProvider>
+        </QueryClientProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
